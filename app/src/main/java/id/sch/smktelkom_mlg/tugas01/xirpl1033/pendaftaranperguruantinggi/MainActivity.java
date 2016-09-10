@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     Button bOK;
     TextView tvhasil;
     TextView tvjurusan;
-    TextView tvhobi;
-    int nhobi;
+    Spinner spasal;
+    TextView tvasal;
     RadioGroup rgstatus;
     String hasil;
     CheckBox cb1, cb2, cb3;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etnama = (EditText) findViewById(R.id.editTextnama);
+        //etnama = (EditText) findViewById(R.id.editTextnama);
 //        rb1 = (RadioButton) findViewById(R.id.radioButton);
 //        rb2 = (RadioButton) findViewById(R.id.radioButton2);
         rgstatus = (RadioGroup) findViewById(R.id.radiogroup);
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         cb3.setOnCheckedChangeListener(this);
         tvjurusan = (TextView) findViewById(R.id.textView6);
         tvhasil = (TextView) findViewById(R.id.textView6);
+        spasal = (Spinner) findViewById(R.id.spinnerkota);
+        tvasal = (TextView) findViewById(R.id.textView6);
         bOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,12 +69,21 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
         String jurusan = "Jurusan : ";
         String nama = etnama.getText().toString();
+
         int startien = jurusan.length();
         if (cb1.isChecked()) jurusan += cb1.getText() + "\n";
         if (cb2.isChecked()) jurusan += cb2.getText() + "\n";
         if (cb3.isChecked()) jurusan += cb3.getText() + "\n";
         if (jurusan.length() == startien) jurusan += "Tidak ada pilihan";
-        tvjurusan.setText("Nama : " + nama + "\n" + "Jenis Kelamin : " + "\n" + hasil + jurusan);
+
+        //  int asal = spasal.getSelectedItemPosition();
+//
+//        String[] arProvinsi = getResources().getStringArray(R.array.kota);
+//        int asal = spasal.getSelectedItemPosition();
+
+        String asal = spasal.getSelectedItem().toString();
+        tvjurusan.setText("Nama : " + nama + "\n" + "Jenis Kelamin : " + "\n" + hasil + jurusan + "Asal Kota : " + asal);
+
     }
 
     //
@@ -87,16 +99,11 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             valid = false;
         }
 
-        //String hasil = null;
-
         return valid;
     }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//        if (isChecked)  nhobi+=1;
-//        else nhobi -= 1;
-//
-//        tvhobi.setText("Jurusan : "+ nhobi);
+
     }
 }
