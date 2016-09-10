@@ -20,21 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
         etnama = (EditText) findViewById(R.id.editTextnama);
         bOK = (Button) findViewById(R.id.button);
-        // daftar = (Button) findViewById(R.id.buttonDaftar);
+        tvhasil = (TextView) findViewById(R.id.textView6);
         bOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doProcess();
+                String nama = etnama.getText().toString();
+                tvhasil.setText("Nama : " + nama);
             }
         });
     }
 
-    private void doProcess() {
-        if ((isValid())) {
-            String nama = etnama.getText().toString();
-            tvhasil.setText("Nama" + etnama);
-        }
-    }
 
     private boolean isValid() {
         boolean valid = true;
