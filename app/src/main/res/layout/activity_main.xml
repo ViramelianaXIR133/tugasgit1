@@ -59,7 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="34dp"
                 android:layout_weight="0.13"
-                android:text="Nama" />
+                android:text="Nama"
+                android:textColor="#4353af" />
 
             <EditText
                 android:id="@+id/editTextnama"
@@ -75,7 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#8014de"
-            android:text="Jenis Kelamin" />
+            android:text="Jenis Kelamin"
+            android:textColor="#4353af" />
 
         <RadioGroup
             android:id="@+id/radiogroup"
@@ -102,7 +104,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#8014de"
-            android:text="Jurusan" />
+            android:text="Jurusan"
+            android:textColor="#4353af" />
 
         <CheckBox
             android:id="@+id/checkBox"
@@ -130,7 +133,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundTint="#8014de"
-            android:text="Asal Kota :" />
+            android:text="Asal Kota :"
+            android:textColor="#4353af" />
 
         <Spinner
             android:id="@+id/spinnerkota"
